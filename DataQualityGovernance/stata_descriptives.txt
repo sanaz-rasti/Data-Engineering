@@ -1,0 +1,112 @@
+
+* Filter the observations
+keep if cohort == 1
+
+. summarize height_cm if cohort == 1
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+   height_cm |         75    165.9573    9.889609        140        193
+
+. 
+. count if cohort == 1 & missing(height_cm)
+  9,741
+
+
+.  summarize weight_kg if cohort == 1
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+   weight_kg |        120    80.44442    20.25148         45        135
+
+
+. count if cohort == 1 & missing(weight_kg)
+  9,696
+
+
+. summarize bmi if cohort == 1
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+         bmi |         68    28.92604    6.218075   18.22625   45.54637
+
+. count if cohort == 1 & missing(bmi)
+  9,748
+
+
+
+. summarize current_smoker if cohort == 1
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+current_sm~r |      7,512     .088525    .2840759          0          1
+
+
+. count if cohort == 1 & missing(current_smoker)
+  2,304
+
+
+. distinct study_id if cohort == 1 & current_smoker == 1 & diab ==1
+
+          |        Observations
+          |      total   distinct
+----------+----------------------
+ study_id |         69         69
+
+
+. distinct study_id if cohort == 1 & current_smoker == 0 & diab == 1
+
+          |        Observations
+          |      total   distinct
+----------+----------------------
+ study_id |        660        660
+
+
+
+
+. count if cohort == 1 & diab ==1 & missing(current_smoker)
+  164
+
+
+
+.  distinct study_id if cohort == 1 & diab== 1 & insulin == 1
+
+          |        Observations
+          |      total   distinct
+----------+----------------------
+ study_id |         92         92
+
+
+
+. distinct study_id if cohort == 1 & diab== 1 & insulin == 0
+
+          |        Observations
+          |      total   distinct
+----------+----------------------
+ study_id |        801        801
+
+
+
+.  distinct study_id if cohort == 1 & diab== 0 & insulin == 1
+
+          |        Observations
+          |      total   distinct
+----------+----------------------
+ study_id |         30         30
+
+
+
+. distinct study_id if cohort == 1 & diab== 0 & insulin == 0
+
+          |        Observations
+          |      total   distinct
+----------+----------------------
+ study_id |       8769       8685
+
+
+
+
+
+
+
+
