@@ -34,9 +34,9 @@ Aiming at using the Azure SQL Database service, a more successful setting would 
 
 
 
-### 3. Start data analytics within Azure Synapse Analytics
+### 3. Data analytics within Azure Synapse Analytics
 In order to manage the database in synapse environment:
-    <br/> &emsp; - Create Synapse workspace > using the resource group that your database lies in. 
+    <br/> &emsp; - Create Synapse workspace > using the resource group that database lies in. 
     <br/> &emsp; - Built-in SQL pool is automatically created, with type: Serverless SQL database
     <br/> &emsp; - Create Apache Spark Pool 
     <br/> &emsp; - Open the Synapse workspace  
@@ -44,7 +44,7 @@ In order to manage the database in synapse environment:
     <br/> &emsp; - in Synapse workspace create new SQL database (+) , called OMOP in my current works-space
     <br/> &emsp; - Overview tab: use Serverless SQL endpoint 
     <br/> &emsp; - Create External tables in Serverless SQL 
-    <br/> &emsp; - 
+
 
 #### Synapse Security Setup:
 Access to MS Azure Synapse workspace can be controlled by: 
